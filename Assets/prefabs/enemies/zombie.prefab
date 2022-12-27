@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingLayerID: 1832551347
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1773701272, guid: 71a617b935f6e094591b97684c0704ed, type: 3}
+  m_Sprite: {fileID: -1119014297, guid: 71a617b935f6e094591b97684c0704ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 602408399565290070}
-  - component: {fileID: 5589099368603692985}
+  - component: {fileID: 8131341704237978380}
+  - component: {fileID: -1126244606206785838}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Untagged
@@ -136,19 +137,33 @@ Transform:
   m_Children:
   - {fileID: 4263215445888124053}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5589099368603692985
-CapsuleCollider:
+--- !u!70 &8131341704237978380
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268728476401925795}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0014669029, y: -0.009587741}
+  m_Size: {x: 0.4757631, y: 0.70937836}
+  m_Direction: 0
+--- !u!114 &-1126244606206785838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268728476401925795}
   m_Enabled: 1
-  m_Radius: 0.26562503
-  m_Height: 0.875
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b72560dcca40bc4eace6943f66412f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
