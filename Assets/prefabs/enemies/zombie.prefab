@@ -91,9 +91,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1832551347
-  m_SortingLayer: 7
-  m_SortingOrder: 0
+  m_SortingLayerID: -931191201
+  m_SortingLayer: 5
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1119014297, guid: 71a617b935f6e094591b97684c0704ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268728476401925795}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -26.3142, y: 2.2425, z: 0}
   m_LocalScale: {x: 2.7792962, y: 2.836432, z: 1}
   m_ConstrainProportionsScale: 0
@@ -167,3 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b72560dcca40bc4eace6943f66412f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerAtt: {fileID: 0}
+  player: {fileID: 6277432522630749878, guid: ed9613b5ffcf29d4db5529ef6ef97b95, type: 3}
+  speed: 10
+  health: 60
+  damage: 5
+  deleteE: 0
+  timeBetweenAttacks: 0.5
+  aie: {fileID: 0}
+  zombie: {fileID: 4826660365251781056}

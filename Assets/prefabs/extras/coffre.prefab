@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6851526432275904071}
   m_Layer: 0
   m_Name: coffre
-  m_TagString: Untagged
+  m_TagString: Extra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,11 +58,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7221559448977363895}
-  - component: {fileID: 3424765892901612333}
   - component: {fileID: 4813326860856774757}
+  - component: {fileID: 2662175673734897914}
   m_Layer: 0
   m_Name: extraparameterz
-  m_TagString: Untagged
+  m_TagString: Extra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,30 @@ Transform:
   m_Father: {fileID: 2535224220355824202}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3424765892901612333
+--- !u!114 &4813326860856774757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876878951495153294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acb499c43836c042b1c43ae363b8792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loots: {fileID: 8291407043874165386, guid: d2f123a2523f0494a93982e56f79e9b2, type: 3}
+  coffreTriggered: {fileID: 6851526432275904071}
+  spawnLoot: 0
+  touched: 0
+  open: 0
+  playerScr: {fileID: 6277432522630749873, guid: ed9613b5ffcf29d4db5529ef6ef97b95, type: 3}
+  swapSprite: {fileID: 2662175673734897914}
+  spriteOnC:
+  - {fileID: 21300000, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
+  - {fileID: 21300040, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
+  spriteVersion: 0
+--- !u!212 &2662175673734897914
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,32 +143,17 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
+  m_SortingLayerID: -931191201
+  m_SortingLayer: 5
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3333334, y: 1.2916666}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4813326860856774757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4876878951495153294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7acb499c43836c042b1c43ae363b8792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loots:
-  - {fileID: 8291407043874165386, guid: d2f123a2523f0494a93982e56f79e9b2, type: 3}
-  spawnLoot: 0

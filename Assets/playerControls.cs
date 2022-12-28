@@ -16,6 +16,10 @@ public class playerControls : MonoBehaviour
     private bool colliderP;
     private Collider2D target;
 
+    public GameObject coffre;
+    public Loot lootScript;
+    public bool opening = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +55,11 @@ public class playerControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.JoystickButton1) && colliderP)
         {
-            animaP.SetBool("attack", true);
-            // destroy l'empty gameobject ("collider") contenant le collider "target"
-            Destroy(target.transform.parent.gameObject);
-            Debug.Log("j'essaie de tuer!!!");
+            PlayerAction();
+            if(lootScript.open)
+            {
+                opening = true;
+            }
            
         }
         else
@@ -66,5 +71,14 @@ public class playerControls : MonoBehaviour
     {
 
         rigidB.MovePosition(rigidB.position + playerVect * Time.fixedDeltaTime * rapide);
+    }
+    public void PlayerAction()
+    {
+        animaP.SetBool("attack", true);
+        // destroy l'empty gameobject ("collider") contenant le collider "target"
+        Destroy(target.transform.parent.gameObject);
+        Debug.Log("j'essaie de tuer!!!");
+
+       
     }
 }
