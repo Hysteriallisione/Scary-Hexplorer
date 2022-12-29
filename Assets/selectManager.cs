@@ -12,6 +12,8 @@ public class selectManager : MonoBehaviour
     public int maxCount = 4;
     public int minCount = 0;
     public bool continueCount = false;
+
+    public GameManager gameM;
     
 
 
@@ -54,5 +56,14 @@ public class selectManager : MonoBehaviour
             continueCount= true;
         }}
         emptyChar = character[selectedChar];
+    }
+
+    public void StartButton()
+    {
+        emptyChar = character[selectedChar];
+        emptyChar.SetActive(false);
+        character[selectedChar].SetActive(true);
+        //character[selectedChar].transform.parent = emptyChar.transform;
+        gameM.BeginGame();
     }
 }

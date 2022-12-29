@@ -15,6 +15,7 @@ public class playerControls : MonoBehaviour
     private bool move;
     private bool colliderP;
     private Collider2D target;
+    private GameObject player;
 
     public GameObject coffre;
     public Loot lootScript;
@@ -23,7 +24,9 @@ public class playerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player");
+
+
     }
 
     // Update is called once per frame
@@ -69,7 +72,7 @@ public class playerControls : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
+        Rigidbody2D rigidB = player.gameObject.GetComponent<Rigidbody2D>();
         rigidB.MovePosition(rigidB.position + playerVect * Time.fixedDeltaTime * rapide);
     }
     public void PlayerAction()
