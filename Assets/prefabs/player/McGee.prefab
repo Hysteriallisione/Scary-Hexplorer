@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9037617437141132654}
   - component: {fileID: 6597795774867189638}
+  - component: {fileID: 2419202450249633548}
+  - component: {fileID: 7753651069431518098}
   m_Layer: 0
   m_Name: McGee
   m_TagString: Player
@@ -85,6 +87,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2419202450249633548
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879721187008276142}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &7753651069431518098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879721187008276142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52beda2d42166254b9809ad499f7027d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidB: {fileID: 2419202450249633548}
+  rapide: 3
+  Horizontal: 0
+  Vertical: 0
+  animaP: {fileID: 0}
+  coffre: {fileID: 4331978427697799590, guid: f01f41153499a814098a17e21b218de4, type: 3}
+  lootScript: {fileID: 0}
+  opening: 0
 --- !u!1 &4383034154687182662
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +139,7 @@ GameObject:
   - component: {fileID: 5945649997436608029}
   - component: {fileID: 5775933529380549917}
   - component: {fileID: 4080080396737121673}
+  - component: {fileID: 8695899587967226361}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -150,3 +194,23 @@ CircleCollider2D:
   m_Offset: {x: -0.017625572, y: -0.1263168}
   serializedVersion: 2
   m_Radius: 0.884826
+--- !u!95 &8695899587967226361
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383034154687182662}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

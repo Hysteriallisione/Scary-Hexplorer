@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3919340217467497791}
   - component: {fileID: 6507855468443493670}
   - component: {fileID: 3309191999278586538}
+  - component: {fileID: 2547176272772038080}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -65,6 +66,26 @@ CircleCollider2D:
   m_Offset: {x: 0.01454854, y: -0.04364586}
   serializedVersion: 2
   m_Radius: 1.0353892
+--- !u!95 &2547176272772038080
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131866381195893320}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4831282624972453039
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,6 +96,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8747997371136513578}
   - component: {fileID: 4090806938153956871}
+  - component: {fileID: 2287170223153733365}
+  - component: {fileID: 7058383468705126070}
   m_Layer: 0
   m_Name: Caleb
   m_TagString: Player
@@ -150,3 +173,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2287170223153733365
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831282624972453039}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &7058383468705126070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831282624972453039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52beda2d42166254b9809ad499f7027d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidB: {fileID: 2287170223153733365}
+  rapide: 2.5
+  Horizontal: 0
+  Vertical: 0
+  animaP: {fileID: 0}
+  coffre: {fileID: 4331978427697799590, guid: f01f41153499a814098a17e21b218de4, type: 3}
+  lootScript: {fileID: 0}
+  opening: 0

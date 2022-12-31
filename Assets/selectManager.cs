@@ -2,68 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
+
 
 public class selectManager : MonoBehaviour
 {
+    
     public GameObject[] character;
     public int selectedChar = 0;
-    public GameObject emptyChar;
-    public int maxCount = 4;
-    public int minCount = 0;
-    public bool continueCount = false;
-
     public GameManager gameM;
-    
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-      
-      
-    }
     public void NextCharacter()
     {
-        selectedChar++;
-        if(selectedChar == -1)
-        {
-            selectedChar ++;
-         if (selectedChar == 4)
-        {
-            selectedChar = minCount;
-            continueCount = true;
-        }} 
-        emptyChar = character[selectedChar];
+        character[selectedChar].SetActive(false);
+        selectedChar = (selectedChar + 1) % character.Length;
+        character[selectedChar].SetActive(true);
     }
     public void PreviousCharacter()
     {
+        character[selectedChar].SetActive(false);
         selectedChar--;
         if(selectedChar < 0)
-        { 
-            selectedChar --;
-        
-        if(selectedChar == 0)
         {
-            selectedChar = maxCount;
-            continueCount= true;
-        }}
-        emptyChar = character[selectedChar];
+            selectedChar += character.Length;
+        }
+        character[selectedChar].SetActive(true);
     }
 
     public void StartButton()
     {
-        emptyChar = character[selectedChar];
-        emptyChar.SetActive(false);
-        character[selectedChar].SetActive(true);
-        //character[selectedChar].transform.parent = emptyChar.transform;
-        gameM.BeginGame();
+        PlayerPrefs.SetInt("Player", selectedChar);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        
+        //gameM.BeginGame();
     }
 }

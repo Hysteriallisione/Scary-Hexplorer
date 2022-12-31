@@ -37,9 +37,9 @@ public class GameManager : MonoBehaviour
 
     public void SelectCharacter()
     {
-        isPaused = false;
+        isPaused = true;
         startMenu.SetActive(true);
-
+        //selectM.Start();
 
     }
 
