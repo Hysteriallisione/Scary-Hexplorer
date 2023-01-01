@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 public class playerControls : MonoBehaviour
@@ -20,6 +21,12 @@ public class playerControls : MonoBehaviour
     public GameObject coffre;
     public Loot lootScript;
     public bool opening = false;
+
+    public float health;
+    public float damage;
+
+    public EnemyZombie zombScr;
+    public EnemyShadow shadScr;
 
     // Start is called before the first frame update
     void Start()
@@ -46,14 +53,14 @@ public class playerControls : MonoBehaviour
             move = true;
             animaP.SetFloat("Horizontal", movingP.x);
             animaP.SetFloat("Vertical", movingP.y);
-            animaP.SetBool("playerMove", true);
+            animaP.SetBool("Move", true);
             animaP.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
             animaP.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
         }
         else
         {
             move = false;
-            animaP.SetBool("playerMove", false);
+            animaP.SetBool("Move", false);
         }
 
         if (Input.GetKeyDown(KeyCode.JoystickButton1) && colliderP)
@@ -67,7 +74,7 @@ public class playerControls : MonoBehaviour
         }
         else
         {
-            animaP.SetBool("attack", false);
+            animaP.SetBool("Attack", false);
         }
     }
     private void FixedUpdate()
@@ -77,11 +84,22 @@ public class playerControls : MonoBehaviour
     }
     public void PlayerAction()
     {
-        animaP.SetBool("attack", true);
+        animaP.SetBool("Attack", true);
+        zombScr.health -= this.damage;
+        shadScr.health -= this.damage;
         // destroy l'empty gameobject ("collider") contenant le collider "target"
-        Destroy(target.transform.parent.gameObject);
         Debug.Log("j'essaie de tuer!!!");
 
        
+    }
+    public void Death()
+    {
+
+        if (health <= 0)
+        {
+        Debug.Log("DEAD PLAYER");
+        animaP.SetBool("Dead", true);
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        }
     }
 }

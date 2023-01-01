@@ -9,6 +9,7 @@ public class startAtt : MonoBehaviour
     public GameObject zombiz;
     public Collider2D meTrigger;
     public bool wakeUp = false;
+    public Animator attAnim;
 
 
     // Start is called before the first frame update
@@ -33,6 +34,8 @@ public class startAtt : MonoBehaviour
         {
             wakeUp = true;
             meTrigger = collision;
+            attAnim.SetBool("goingTo", true);
+            
             Debug.Log("trigger has been touched");
         }
     }

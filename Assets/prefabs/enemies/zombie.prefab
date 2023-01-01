@@ -168,11 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerAtt: {fileID: 0}
-  player: {fileID: 6277432522630749878, guid: ed9613b5ffcf29d4db5529ef6ef97b95, type: 3}
-  speed: 10
+  speed: 1.5
   health: 60
   damage: 5
   deleteE: 0
   timeBetweenAttacks: 0.5
-  aie: {fileID: 0}
+  aie: {fileID: 1830741036181764647, guid: 816a11cdcdcf4b4489db2eb5641e32fd, type: 3}
   zombie: {fileID: 4826660365251781056}
