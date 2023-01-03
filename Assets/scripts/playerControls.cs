@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
 using static UnityEngine.GraphicsBuffer;
+
 
 public class playerControls : MonoBehaviour
 {
@@ -13,7 +17,7 @@ public class playerControls : MonoBehaviour
     public float Horizontal;
     public float Vertical;
     public Animator animaP;
-    private bool move;
+    
     private bool colliderP;
     private Collider2D target;
     private GameObject player;
@@ -27,23 +31,33 @@ public class playerControls : MonoBehaviour
 
     public EnemyZombie zombScr;
     public EnemyShadow shadScr;
+    public GameManager gameM;
+    public ActionPlayer inputPlayer;
+
+   
+    private bool move;
+    private bool attack;
+    private bool pause;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-
-
+        zombScr = GetComponent<EnemyZombie>();
+        shadScr = GetComponent<EnemyShadow>();
+        gameM = GetComponent<GameManager>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         move = false;
-        Vector2 movingP = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        playerVect = movingP.normalized * rapide;
-        Horizontal = transform.position.x;
-        Vertical = transform.position.y;
+         Vector2 movingP = new Vector2(Horizontal, Vertical);
+         playerVect = movingP.normalized * rapide;
+         Horizontal = transform.position.x;
+         Vertical = transform.position.y;
        
 
         // if ( startZeG)
@@ -54,8 +68,7 @@ public class playerControls : MonoBehaviour
             animaP.SetFloat("Horizontal", movingP.x);
             animaP.SetFloat("Vertical", movingP.y);
             animaP.SetBool("Move", true);
-            animaP.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
-            animaP.SetFloat("Vertical", Input.GetAxisRaw("Vertical"));
+           
         }
         else
         {
@@ -63,7 +76,7 @@ public class playerControls : MonoBehaviour
             animaP.SetBool("Move", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.JoystickButton1) && colliderP)
+        if (attack && colliderP)
         {
             PlayerAction();
             if(lootScript.open)
@@ -76,12 +89,29 @@ public class playerControls : MonoBehaviour
         {
             animaP.SetBool("Attack", false);
         }
+        if(pause)
+        {
+            gameM.Pause();
+        }
     }
-    private void FixedUpdate()
+
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        Vector2 movingP = new Vector2(Horizontal, Vertical);
+        playerVect = movingP.normalized * rapide;
+        Horizontal = transform.position.x;
+        Vertical = transform.position.y;
+        rigidB.velocity = ctx.ReadValue<Vector2>() * rapide;
+        rigidB.MovePosition(rigidB.position + playerVect * Time.fixedDeltaTime * rapide);
+    }
+
+
+  /*  private void FixedUpdate()
     {
         Rigidbody2D rigidB = player.gameObject.GetComponent<Rigidbody2D>();
         rigidB.MovePosition(rigidB.position + playerVect * Time.fixedDeltaTime * rapide);
-    }
+      
+    }*/
     public void PlayerAction()
     {
         animaP.SetBool("Attack", true);
@@ -100,6 +130,24 @@ public class playerControls : MonoBehaviour
         Debug.Log("DEAD PLAYER");
         animaP.SetBool("Dead", true);
         SceneManager.LoadScene(0, LoadSceneMode.Single);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            colliderP = true;
+            target = collision;
+            Debug.Log("trigger has been touched on enemy");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            colliderP = false;
+            target = null;
         }
     }
 }

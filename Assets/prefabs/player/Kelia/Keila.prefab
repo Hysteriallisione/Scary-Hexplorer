@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 4294578120843328124}
   - component: {fileID: 3727548259839285110}
   - component: {fileID: 8991634291351254727}
+  - component: {fileID: 486551540283612718}
   m_Layer: 0
   m_Name: Keila
   m_TagString: Player
@@ -214,3 +215,38 @@ MonoBehaviour:
   coffre: {fileID: 4331978427697799590, guid: f01f41153499a814098a17e21b218de4, type: 3}
   lootScript: {fileID: 0}
   opening: 0
+  health: 110
+  damage: 10
+  zombScr: {fileID: 0}
+  shadScr: {fileID: 0}
+  gameM: {fileID: 0}
+--- !u!114 &486551540283612718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294578120843328122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 8965226833544417510, guid: 8d5946df86e24034295c23a2d10be026, type: 3}

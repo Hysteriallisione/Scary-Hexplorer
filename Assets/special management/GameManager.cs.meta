@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 5d08466962788714fa0e06431e20c5a9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animatedShad: {fileID: 3073461029230974712, guid: 6b2bcee10bf97d642bf7cdd79c6e098e, type: 3}
+  - shadowE: {fileID: 6062164616070287900, guid: f4566eb8504dd8b4a9c817806f3d2ba4, type: 3}
+  - menuForPause: {instanceID: 0}
+  - returnButton: {instanceID: 0}
+  - zombScript: {fileID: -1126244606206785838, guid: 56517c97b7418f5458736376cb9e3136, type: 3}
+  - playerScript: {instanceID: 0}
+  - lootScript: {instanceID: 0}
+  - selectM: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

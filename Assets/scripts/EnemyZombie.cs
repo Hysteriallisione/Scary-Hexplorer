@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyZombie : MonoBehaviour
 {
     // Ze base
-    public Collider2D triggerAtt;
+    
     private bool move;
     public float speed;
     public float health;
@@ -51,6 +51,7 @@ public class EnemyZombie : MonoBehaviour
 
         if (zombiePos.magnitude > 0)
         {
+            zombie.SetBool("isTriggered", true);
             move = true;
             zombie.SetFloat("horizontal", horizontal);
             zombie.SetFloat("vertical", vertical);
@@ -72,9 +73,9 @@ public class EnemyZombie : MonoBehaviour
        if (health <= 0)
        {
             deleteE = true;
-             // Loots();
-              Death();
-              zombie.SetBool("dead", true);
+            // Loots();
+            Death();
+            zombie.SetBool("dead", true);
        }
 
        Vector3 showDamage = new Vector3(transform.position.x, 1f, transform.position.z);
@@ -100,12 +101,15 @@ public class EnemyZombie : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject player = GameObject.FindWithTag("Player");
-        triggerAtt = player.GetComponent<Collider2D>();
+        Collider2D triggerAtt = player.GetComponent<Collider2D>();
 
         if (collision.gameObject.CompareTag("Player"))
         {
             canAttack = true;
             triggerAtt = collision;
+            zombie.SetBool("isTriggered", true);
+            
+
             if(canAttack)
             {
                 playerScr.PlayerAction();
